@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day1_Assignment</title>
+</head>
+<style> div {
+    margin: 0;
+    padding: 3px;
+    border: 1px solid blueviolet;
+    margin-bottom: 5px;
+    font-size: large;
+}
+
+span {
+    font-weight: bold;
+}
+
+button {
+    padding: 1em;
+    border-radius: 1em;
+    font-size: medium;
+
+}
+
+div p:nth-child(2) {
+    color: red;
+}
+
+div p:first-child {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div p:nth-child(3) {
+    color: rgb(29, 29, 126);
+}</style>
+<body>
+    <main>
+        <div>
+            <h3>Question 1</h3>
+            <p>Explore and explain the various methods in console function .</p>
+            <h4>Answer</h4>
+            <p>There are many methods in console function.
+                Mostly those function used to debugging and testing purpose.
+                Lets discuss about those methods</p>
+            <ol>
+                <li>assert</li>
+                <li>clear</li>
+                <li>count</li>
+                <li>error</li>
+                <li>group</li>
+                <li>groupCollapsed</li>
+                <li>groupEnd</li>
+                <li>info</li>
+                <li>log</li>
+                <li>table</li>
+                <li>time</li>
+                <li>timeEnd</li>
+                <li>trace</li>
+                <li>warn</li>
+            </ol>
+            <div>
+                <p>1.Assert</p>
+                <p>It is used to display error message when assertion is failed or false</p>
+                <p>Example</p>
+                <code>console.assert(document.getElementById("thor"),"In this page no element with this ID");</code>
+                <p>Note:only assertion failed the message display.</p>
+            </div>
+            <div>
+                <p>2.Clear</p>
+                <p>It is used to clear all message in console</p>
+                <p>Example</p>
+                <code>console.clear();</code>
+            </div>
+            <div>
+                <p>3.Count</p>
+                <p>It is used to count how many times its called .Mostly used how many times the function or set of code
+                    run like loop</p>
+                <p>Example</p>
+                <code>console.count();</code>
+            </div>
+            <div>
+                <p>4.Error</p>
+                <p>It is used to write a Error message in console</p>
+                <p>Example</p>
+                <code>console.error("This is not right way");</code>
+            </div>
+            <div>
+                <p>5.Group</p>
+                <p>It is used to create or start of the group message in console.Using GroupEnd and group we can group
+                    some message.
+                    This method for not-collapsed message groups</p>
+                <p>Example</p>
+                <code>console.log("Outside group");<br>
+                    console.group();<br>
+                    console.log("Inside a group!");</code>
+            </div>
+            <div>
+                <p>6.GroupEnd</p>
+                <p>It is used to End of the group message in console.
+                    The starting of group and end of group will be collapse as per required. </p>
+                <p>Example</p>
+                <code>console.log("Outside Group");<br>
+                    console.group();<br>
+                    console.log("Inside a group!");<br>
+                    console.groupEnd();<br>
+                    console.log("Outside Group");</code>
+            </div>
+            <div>
+                <p>7.GroupCollapsed</p>
+                <p>It is used to indicate the start of a collapsed message group.after all console message will
+                    collapsed </p>
+                <p>Example</p>
+
+                <code>console.log("Outside Group");<br>
+                    console.groupCollapsed();<br>
+                    console.log("Inside a group!");<br>
+                    console.log("Outside Group");<br>  </code>
+            </div>
+            <div>
+                <p>8.Info</p>
+                <p>It is used to display information message in console.display like Information message. </p>
+                <p>Example</p>
+                <code>console.info("Normal Information");</code>
+            </div>
+            <div>
+                <p>9.Log</p>
+                <p>Most Common method.It is used to display message,data in console. </p>
+                <p>Example</p>
+                <code>console.log("Message");</code>
+            </div>
+            <div>
+                <p>10.Table</p>
+                <p>Most Common method.It is used to display data in Table format console. </p>
+                <p>Example</p>
+                <code>console.table({Name:"Viknesh",Address:"Chennai"});</code>
+            </div>
+            <div>
+                <p>11.Time & 12.timeEnd</p>
+                <p>It start the timer for excute code until timeEnd method.Used for track how long an opreation takes.
+                </p>
+                <p>Example</p>
+                <code>console.time();
+                    for (i = 0; i < 100000; i++) {
+                      // some code
+                    }
+                    console.timeEnd();</code>
+            </div>
+            <div>
+                <p>13.Trace</p>
+                <p>It is used to show how the code ended up at a certain point. </p>
+                <p>Example</p>
+                <code>
+                    <pre>
+                        
+                HTML -- > <button onclick="myFunction()">Start Trace</button>
+                function myFunction() {
+                    myOtherFunction();
+                  }
+                  
+                  function myOtherFunction() {
+                    console.trace();
+                  }
+                  </pre>
+                </code>
+            </div>
+            <div>
+                <p>14.warn</p>
+                <p>It is used to display warning message in console. </p>
+                <p>Example</p>
+                <code>console.warb("Unwanted Operation"});</code>
+            </div>
+        </div>
+
+        <div>
+            <h3>Question 2</h3>
+            <p>Write the difference between var, let and const with code examples</p>
+            <h4>Answer</h4>
+            <p>1.Var</p>
+            <p>Var declarations are globally scoped or function/locally scoped.The scope is global when a var variable
+                is declared outside a function. This means that any variable that is declared with var outside a
+                function block is available for use in the whole window.
+
+                var is function scoped when it is declared within a function. This means that it is available and can be
+                accessed only within that function.
+                For Example:
+                var Name;
+                function Change()
+                {
+                var Name;
+                }
+            </p>
+            <p>Disadvantage:</p>
+            <pre>
+                <code>  
+                var greeter = "hey hi";
+                    var times = 4;
+                
+                    if (times > 3) {
+                        var greeter = "say Hello instead"; 
+                    }
+                    
+                    console.log(greeter) // "say Hello instead"
+                    </code>
+                </pre>
+            <p>So, since times > 3 returns true, greeter is redefined to "say Hello instead". While this is not a
+                problem if you knowingly want greeter to be redefined, it becomes a problem when you do not realize that
+                a variable greeter has already been defined before.
+
+                If you have used greeter in other parts of your code, you might be surprised at the output you might
+                get.
+                This will likely cause a lot of bugs in your code. This is why let and const are necessary.</p>
+            <p>2.Let</p>
+            <p>let is now preferred for variable declaration. It's no surprise as it comes as an improvement to var
+                declarations. It also solves the problem with var. A block is a chunk of code bounded by {}. A
+                block lives in curly braces. Anything within curly braces is a block.
+                So a variable declared in a block with let is only available for use within that block. </p>
+            <p>Example</p>
+            <pre><code>
+                        let greeting = "say Hi";
+                        let times = 4;
+                     
+                        if (times > 3) {
+                             let hello = "say Hello instead";
+                             console.log(hello);// "say Hello instead"
+                         }
+                        console.log(hello) // hello is not defined
+                    </code></pre>
+            <p>3.const</p>
+            <p>Variables declared with the const maintain constant values. const declarations share some similarities
+                with let declarations.
+                Like let declarations, const declarations can only be accessed within the block they were declared.
+                This means that the value of a variable declared with const remains the same within its scope.
+            </p>
+            <pre><code> 
+                        const greeting = "say Hi";
+                        greeting = "say Hello instead";// error: Assignment to constant variable.</code></pre>
+
+            <p>conclusion</p>
+            <p>var declarations are globally scoped or function scoped while let and const are block scoped.
+                var variables can be updated and re-declared within its scope; let variables can be updated but not
+                re-declared; const variables can neither be updated nor re-declared.
+                They are all hoisted to the top of their scope. But while var variables are initialized with undefined,
+                let and const variables are not initialized.
+                While var and let can be declared without being initialized, const must be initialized during
+                declaration.</p>
+        </div>
+
+        <div>
+            <h3>Question 3</h3>
+            <p>Write a brief intro on available data types in Javascript. </p>
+            <h4>Answer</h4>
+            <p>Six Data Types that are primitives, checked by typeof operator:<br>
+             
+                <li>undefined</li>
+                <li>Boolean</li>
+                <li>Number</li>
+                <li>String</li>
+                <li>BigInt</li>
+                <li>Symbol</li>
+
+            <p><b>Undefined : </b>A variable that has not been assigned a value has the value undefined.</p>
+            <p><b>Boolean :</b> Boolean represents a logical entity and can have two values: true and false. </p>
+            <p><b>Number</b>The Number type is a double-precision 64-bit binary format IEEE 754 value (numbers between
+                -(253 − 1) and 253 − 1). In addition to representing floating-point numbers, the number type has three
+                symbolic values: +Infinity, -Infinity, and NaN ("Not a Number").</p>
+            <p><b>BigInt</b>The BigInt type is a numeric primitive in JavaScript that can represent integers with
+                arbitrary precision. With BigInts, you can safely store and operate on large integers even beyond the
+                safe integer limit for Numbers.
+
+                A BigInt is created by appending n to the end of an integer or by calling the constructor<br>
+                Eg: const x = 2n ** 53n; // 9007199254740992n
+            </p>
+            <p><B>String :</B>JavaScript's String type is used to represent textual data. It is a set of "elements" of
+                16-bit unsigned integer values.</p>
+            <p><b>Symbol:</b>
+                A Symbol is a unique and immutable primitive value and may be used as the key of an Object property (see
+                below). In some programming languages, Symbols are called "atoms".</p>
+            <h4>Example</h4>
+            <p>
+               <pre> <code>
+        var variableBoolean = true;//Boolean
+        var variableString = "Hai";
+        var variableString2 = "2";
+        var variableNumber = 2;
+        var variableNumber = 2.2;
+        var Test;
+        document.write(Test);//Undefined
+        
+    </code>
+</pre>
+            </p>
+
+        </div>
+    </main>
+    <script>
+        //Clear 
+        console.clear();
+        //Assert
+        console.assert(document.getElementById("thor"), "In this page no element with this ID");
+        //Count
+        console.count();
+        //Error
+        console.error("This is not right way");
+        //Group & GroupEnd
+        console.log("Outside Group");
+        console.group();
+        console.log("Inside a group!");
+        console.groupEnd();
+        console.log("Outside Group");
+
+        //Info
+        console.info("Normal Information");
+        //Log
+        console.log("Normal Information");
+        //Table
+        console.table({ Name: "Viknesh", Address: "Chennai" });
+
+        //Time
+        console.time(); for (i = 0; i < 100000; i++) { // some code
+        } console.timeEnd();
+
+        //Trace
+        function myFunction() {
+            myOtherFunction();
+        }
+
+        function myOtherFunction() {
+            console.trace();
+            console.groupCollapsed();
+        }
+        
+        //console.groupCollapsed();
+    </script>
+</body>
+
+</html>
